@@ -12,6 +12,8 @@ class SecondScene extends Phaser.Scene {
   }
 
   create() {
+    this.scene.start("CompareScene");
+
     this.width = this.scale.width;
     this.height = this.scale.height;
     this.bgAndHeading();
@@ -513,7 +515,12 @@ class SecondScene extends Phaser.Scene {
   switchOff() {
     this.switchBackground = this.add.graphics();
     this.switchBackground.fillStyle(0x202025, 1);
-    this.switchBackground.fillRect(432 - 5, 400 - 48, 7, 46);
+    this.switchBackground.fillRect(
+      this.width * 0.581 - 5,
+      this.height * 0.4 - 48,
+      7,
+      46
+    );
 
     this.switch = this.add.graphics({
       lineStyle: { width: 10, color: 0xffffff },
@@ -523,7 +530,7 @@ class SecondScene extends Phaser.Scene {
     this.switch.destroy();
 
     this.switchImage = this.add
-      .image(432, 400, "lineTexture")
+      .image(this.width * 0.581, this.height * 0.4, "lineTexture")
       .setOrigin(0.5, 0.5);
 
     this.tweens.add({

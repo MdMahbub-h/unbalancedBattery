@@ -12,7 +12,8 @@ class VideoScene extends Phaser.Scene {
   }
 
   create() {
-    // this.scene.start("FirstScene");
+    console.log("videoScene");
+    this.scene.start("FirstScene");
     this.width = this.scale.width;
     this.height = this.scale.height;
 
